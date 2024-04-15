@@ -4,3 +4,12 @@ This project represents a collaboration with Dave Clark to supplement an interac
 
 https://github.com/Zenguin15823/pod-project/assets/90000508/6cdfb410-0e3a-4c3e-955b-b0ff654102a6
 
+## Troubleshooting
+
+### Favorite Icon
+
+Inititally, we received a 404 on `favicon.ico`. The Flask team suggests handling the [favico](https://flask.palletsprojects.com/en/3.0.x/patterns/favicon/) as a static asset. E.g.
+
+```html
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+```

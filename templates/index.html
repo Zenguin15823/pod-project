@@ -8,6 +8,7 @@
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 
 <body>
@@ -18,9 +19,13 @@
             <img src="static/pod.png" alt="Pods">
         </div>
 
+        <div id="log" class="log-border">
+            {{ message }} <!-- This is where the logs will be displayed -->
+        </div>
+
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-success">Start</button>
-            <button type="button" class="btn btn-danger">Stop</button>
+            <button type="button" class="btn btn-success" onclick="window.location.href='/start'">Start</button>
+            <button type="button" class="btn btn-danger" onclick="window.location.href='/stop'">Stop</button>
         </div>
     </div>
 </body>
