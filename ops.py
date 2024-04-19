@@ -1,0 +1,60 @@
+import RPi.GPIO as GPIO
+from gpiozero import MotionSensor
+from pygame import mixer
+import time
+
+lights = [32, 22, 18, 16, 12]
+
+def activate():
+    """Turns on everything."""
+    setup()
+
+def cylon():
+    """Blinks the lights in a Cylon scan pattern."""
+    lights = [32, 22, 18, 16, 12];
+    for i in lights:
+        GPIO.setup(i, GPIO.OUT)
+
+    while True:
+        for i in lights:
+            GPIO.output(i, GPIO.HIGH)
+            time.sleep(0.2)
+            GPIO.output(i, GPIO.LOW)
+
+def motion():
+    pir = MotionSensor(4)
+
+def off():
+    """Turns off everything."""
+    for i in lights:
+        GPIO.output(i, GPIO.LOW)
+    GPIO.cleanup()
+
+def sound():
+    mixer.init()
+    mixer.music.load("static/sounds/hello.mp3")
+
+def setup():
+    """Sets up the GPIO pins for use."""
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setwarnings(False)
+
+    for i in lights:
+        GPIO.setup(i, GPIO.OUT)
+    
+def test():
+    """Does a quick Cylon scan.
+    
+    Usage::
+
+        >>> import ops
+        >>> ops.test()
+    """
+    setup()
+
+    count = 0
+    while count < 100:
+        cylon()
+        count += 1
+    
+    off()
