@@ -12,10 +12,6 @@ def activate():
 
 def cylon():
     """Blinks the lights in a Cylon scan pattern."""
-    lights = [32, 22, 18, 16, 12];
-    for i in lights:
-        GPIO.setup(i, GPIO.OUT)
-
     while True:
         for i in lights:
             GPIO.output(i, GPIO.HIGH)
