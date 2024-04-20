@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from .ops import activate, off, test
+from .ops import activate, motion, off, test
 from threading import Thread
 
 bp = Blueprint('views', __name__)
@@ -12,7 +12,7 @@ def index():
 @bp.route('/start', methods=['GET'])
 def start():
     message = 'The Pi is now aware of motion'
-    t = Thread(target=activate)
+    t = Thread(target=motion)
     t.start()
     return render_template('index.html', message=message)
 
@@ -25,5 +25,6 @@ def stop():
 @bp.route('/test', methods=['GET'])
 def test():
     message = 'Test the LED display'
-    test()
+    t = Thread(target=activate)
+    t.start()
     return render_template('index.html', message=message)

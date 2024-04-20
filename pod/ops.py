@@ -20,6 +20,15 @@ def cylon():
 
 def motion():
     pir = MotionSensor(4)
+    setup()
+
+    while True:
+        pir.wait_for_motion()
+        for i in range(10):
+            for i in lights:
+                GPIO.output(i, GPIO.HIGH)
+                time.sleep(0.2)
+                GPIO.output(i, GPIO.LOW)
 
 def off():
     """Turns off everything."""
@@ -43,7 +52,7 @@ def test():
     """Does a quick Cylon scan."""
     setup()
 
-    for i in range(10):
+    for _ in range(10):
         for i in lights:
             GPIO.output(i, GPIO.HIGH)
             time.sleep(0.2)
