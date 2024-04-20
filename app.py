@@ -21,7 +21,7 @@ def stop():
     ops.off()
     return render_template('index.html', message=message)
 
-@app.route(/'test', methods=['GET'])
+@app.route('/test', methods=['GET'])
 def test():
     print('Test')
     message = 'Test the LED display'
