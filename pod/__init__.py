@@ -1,5 +1,5 @@
 from flask import Flask
+from pod import views
 
 app = Flask(__name__)
-
-from pod.views import views, ops
+app.register_blueprint(views.bp)
