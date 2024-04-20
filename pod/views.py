@@ -24,7 +24,6 @@ def stop():
 
 @bp.route('/test', methods=['GET'])
 def test():
-    print('Test')
     message = 'Test the LED display'
-    # test()
+    test()
     return render_template('index.html', message=message)

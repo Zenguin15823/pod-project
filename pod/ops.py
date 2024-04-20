@@ -40,18 +40,13 @@ def setup():
         GPIO.setup(i, GPIO.OUT)
     
 def test():
-    """Does a quick Cylon scan.
-    
-    Usage::
-
-        >>> import ops
-        >>> ops.test()
-    """
+    """Does a quick Cylon scan."""
     setup()
 
-    count = 0
-    while count < 100:
-        cylon()
-        count += 1
+    for i in range(10):
+        for i in lights:
+            GPIO.output(i, GPIO.HIGH)
+            time.sleep(0.2)
+            GPIO.output(i, GPIO.LOW)
     
     off()
