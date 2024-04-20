@@ -8,6 +8,7 @@ lights = [32, 22, 18, 16, 12]
 def activate():
     """Turns on everything."""
     setup()
+    cylon()
 
 def cylon():
     """Blinks the lights in a Cylon scan pattern."""
