@@ -35,10 +35,10 @@ def cylon():
 def motion():
     pir = MotionSensor(4)
     setup()
-    play_sound()
 
     while True:
         pir.wait_for_motion()
+        play_sound()
         for i in range(10):
             for i in lights:
                 GPIO.output(i, GPIO.HIGH)
