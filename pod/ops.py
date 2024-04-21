@@ -7,16 +7,16 @@ import random
 lights = [32, 22, 18, 16, 12]
 
 sounds = [
-    "static/sounds/charging-machine.mp3",
-    "static/sounds/heavy-machine-click.mp3",
-    "static/sounds/hello.mp3",
-    "static/sounds/mechanicalclamp.mp3",
-    "static/sounds/mecha-sound-effects.mp3",
-    "static/sounds/never-president.mp3",
-    "static/sounds/not-touching.mp3",
-    "static/sounds/slot-machine-payout.mp3",
-    "static/sounds/sorry.mp3",
-    "static/sounds/startup-sequence.mp3"
+    "pod/static/sounds/charging-machine.mp3",
+    "pod/static/sounds/heavy-machine-click.mp3",
+    "pod/static/sounds/hello.mp3",
+    "pod/static/sounds/mechanicalclamp.mp3",
+    "pod/static/sounds/mecha-sound-effects.mp3",
+    "pod/static/sounds/never-president.mp3",
+    "pod/static/sounds/not-touching.mp3",
+    "pod/static/sounds/slot-machine-payout.mp3",
+    "pod/static/sounds/sorry.mp3",
+    "pod/static/sounds/startup-sequence.mp3"
     ]
 
 def activate():
