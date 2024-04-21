@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from .ops import activate, motion, off, test
+from .ops import activate, motion, off, test, play_sound
 from threading import Thread
 
 bp = Blueprint('views', __name__)
@@ -25,6 +25,7 @@ def stop():
 @bp.route('/test', methods=['GET'])
 def test():
     message = 'Test the LED display'
+    play_sound()
     t = Thread(target=activate)
     t.start()
     return render_template('index.html', message=message)

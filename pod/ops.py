@@ -2,8 +2,22 @@ import RPi.GPIO as GPIO
 from gpiozero import MotionSensor
 from pygame import mixer
 import time
+import random
 
 lights = [32, 22, 18, 16, 12]
+
+sounds = [
+    "static/sounds/charging-machine.mp3",
+    "static/sounds/heavy-machine-click.mp3",
+    "static/sounds/hello.mp3",
+    "static/sounds/mechanicalclamp.mp3",
+    "static/sounds/mecha-sound-effects.mp3",
+    "static/sounds/never-president.mp3",
+    "static/sounds/not-touching.mp3",
+    "static/sounds/slot-machine-payout.mp3",
+    "static/sounds/sorry.mp3",
+    "static/sounds/startup-sequence.mp3"
+    ]
 
 def activate():
     """Turns on everything."""
@@ -36,9 +50,12 @@ def off():
         GPIO.output(i, GPIO.LOW)
     GPIO.cleanup()
 
-def sound():
+def play_sound():
     mixer.init()
-    mixer.music.load("static/sounds/hello.mp3")
+    mixer.music.load(random.choice(sounds))
+    mixer.music.play()
+    while mixer.music.get_busy() == True:
+        pass
 
 def setup():
     """Sets up the GPIO pins for use."""
