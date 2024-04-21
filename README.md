@@ -4,6 +4,26 @@ This project represents a collaboration with Dave Clark to supplement an interac
 
 https://github.com/Zenguin15823/pod-project/assets/90000508/6cdfb410-0e3a-4c3e-955b-b0ff654102a6
 
+## Install
+
+Since we want the program to load when the Pi starts up, adding a `systemd` configuration seems like the best choice.
+
+```
+[Unit]
+Description=Pod-Project
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/pod-project/app.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
+https://www.makeuseof.com/what-is-systemd-launch-programs-raspberry-pi/
+
 ## Troubleshooting
 
 ### Favorite Icon
