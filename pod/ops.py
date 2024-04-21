@@ -15,7 +15,7 @@ sounds = [
     "pod/static/sounds/heavy-machine-click.mp3",
     "pod/static/sounds/industrial-machine-cycle.mp3",
     "pod/static/sounds/large-steampunk-factory.mp3",
-    "pod/static/sounds/machine-powering-down.mp3  ",
+    "pod/static/sounds/machine-powering-down.mp3",
     "pod/static/sounds/mechanicalclamp.mp3",
     "pod/static/sounds/mecha-sound-effects.mp3",
     "pod/static/sounds/old-machine.mp3",
