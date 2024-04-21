@@ -35,6 +35,7 @@ def cylon():
 def motion():
     pir = MotionSensor(4)
     setup()
+    play_sound()
 
     while True:
         pir.wait_for_motion()
