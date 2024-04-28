@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pod Project</title>
 
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="background-image" href="{{ url_for('static', filename='bg-rivet.jpg') }}" />
 </head>
 
 <body>
-    <div class="" container>
+    <div class="container">
         <h1>Pod Project</h1>
 
         <div>
@@ -24,11 +25,16 @@
         </div>
 
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-success" onclick="window.location.href='/start'">Start</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/test'">Test</button>
-            <button type="button" class="btn btn-danger" onclick="window.location.href='/stop'">Stop</button>
+            <button type="button" class="btn btn-success" id="start"
+                onclick="window.location.href='/start'">Start</button>
+            <button type="button" class="btn btn-primary" id="test" onclick="window.location.href='/test'">Test</button>
+            <button type="button" class="btn btn-danger" id="stop" onclick="window.location.href='/stop'">Stop</button>
         </div>
     </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
 </body>
 
 </html>
