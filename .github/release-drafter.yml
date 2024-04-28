@@ -1,0 +1,8 @@
+sort-direction: ascending
+change-template: "- #$NUMBER - $TITLE @$AUTHOR"
+template: |
+  ## Description
+
+  ## References
+
+  $CHANGES
